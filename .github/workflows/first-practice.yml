@@ -16,7 +16,6 @@ jobs:
         run: |
           cd 04+Practice+Project
           npm ci
-            - name: install dependencies
       - name: run lints
         run: |
           cd 04+Practice+Project
