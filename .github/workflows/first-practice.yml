@@ -1,7 +1,7 @@
 name: first challenge
 on: 
-  - push
-
+#  - push
+  - workflow_dispatch
 jobs:
   execute-challenge:
     runs-on: ubuntu-latest
