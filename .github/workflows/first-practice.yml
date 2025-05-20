@@ -19,7 +19,7 @@ jobs:
       - name: run lints
         run: |
           cd 04+Practice+Project
-          npm lint
+          npm run lint
       - name: run tests
         run: |
           cd 04+Practice+Project
