@@ -14,22 +14,22 @@ jobs:
           node-version: 18.x
       - name: install dependencies
         run: |
-          cd 04+Practice+Project+(Start)
+          cd 04+Practice+Project
           npm ci
             - name: install dependencies
       - name: run lints
         run: |
-          cd 04+Practice+Project+(Start)
+          cd 04+Practice+Project
           npm lint
       - name: run tests
         run: |
-          cd 04+Practice+Project+(Start)
+          cd 04+Practice+Project
           npm test
       - name: build project
         run: |
-          cd 04+Practice+Project+(Start)
+          cd 04+Practice+Project
           npm run build
       - name: deploy project
         run: |
-          cd 04+Practice+Project+(Start)
+          cd 04+Practice+Project
           echo "deploying..." 
