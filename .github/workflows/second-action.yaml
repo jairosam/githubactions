@@ -12,7 +12,9 @@ jobs:
           node-version: 18
       - name: install dependencies
         run: |
-          ls -lrth
+          cd 02+Starting+Project
           npm ci
       - name: run tests
-        run: npm test 
+        run: |
+          cd 02+Starting+Project
+          npm test 
