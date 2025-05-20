@@ -17,4 +17,23 @@ jobs:
       - name: run tests
         run: |
           cd 02+Starting+Project
-          npm test 
+          npm test
+  deploy-application:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: |
+          cd 02+Starting+Project
+          npm ci
+      - name: run build
+        run: |
+          cd 02+Starting+Project
+          npm run build
+      - name: deploy
+        run: echo "deploying...."
