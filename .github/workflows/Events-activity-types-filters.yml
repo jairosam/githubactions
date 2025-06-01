@@ -17,14 +17,13 @@ jobs:
 #      run:
 #        working-directory: $GITHUB_WORKSPACE/01+Starting+Project
     steps:
-      - name: directory
-        run: ls -l
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
         run: |
+          ls -l ${{ github.workspace }}
           npm ci
       - name: Test code
         run: |
