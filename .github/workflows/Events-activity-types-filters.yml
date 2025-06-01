@@ -9,9 +9,13 @@ on:
   push:
     branches:
       - main
+      - dev
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./01+Starting+Project
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
@@ -19,17 +23,13 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: |
-          cd 01+Starting+Project
           npm ci
       - name: Test code
         run: |
-          cd 01+Starting+Project
-          npm run test
+          npm run test 
       - name: Build code
         run: |
-          cd 01+Starting+Project
           npm run build
       - name: Deploy project
         run: |
-          cd 01+Starting+Project
           echo "Deploying..."
