@@ -15,8 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: 01+Starting+Project
+        working-directory: $GITHUB_WORKSPACE/01+Starting+Project
     steps:
+      - name: directory
+        run: ls -l $GITHUB_WORKSPACE
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
       - name: Get code
