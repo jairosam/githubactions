@@ -45,4 +45,3 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploying..."
-        working-directory: ${{ github.workspace }}/01+Starting+Project
