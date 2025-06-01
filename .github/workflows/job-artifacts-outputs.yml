@@ -51,4 +51,3 @@ jobs:
         run: |
           ls
           echo "Deploying..."
-        working-directory: ${{ github.workspace }}/npm-artifact
