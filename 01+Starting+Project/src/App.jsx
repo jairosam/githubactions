@@ -9,6 +9,7 @@ function App() {
           <img src={logo} />
         </div>
         <h1>Im learning & Mastering GitHub Actions</h1>
+        <h2>Im figuring out why the action fails when the pull request is completed</h2>
       </header>
       <MainContent />
     </>
