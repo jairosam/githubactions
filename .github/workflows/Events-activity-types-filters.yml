@@ -21,14 +21,18 @@ jobs:
       - name: Install dependencies
         run: |
           ls -l ${{ github.workspace }}
+          pwd
           npm ci
         working-directory: ${{ github.workspace }}/01+Starting+Project
       - name: Test code
         run: |
           npm run test 
+        working-directory: ${{ github.workspace }}/01+Starting+Project
       - name: Build code
         run: |
           npm run build
+        working-directory: ${{ github.workspace }}/01+Starting+Project
       - name: Deploy project
         run: |
           echo "Deploying..."
+        working-directory: ${{ github.workspace }}/01+Starting+Project
