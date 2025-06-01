@@ -1,0 +1,42 @@
+name: Deploy website
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .github/workflows/*  
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ${{ github.workspace }}/01+Starting+Project
+      - name: Lint code
+        run: npm run lint
+        working-directory: ${{ github.workspace }}/01+Starting+Project
+      - name: Test code
+        run: npm run test
+        working-directory: ${{ github.workspace }}/01+Starting+Project
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ${{ github.workspace }}/01+Starting+Project
+      - name: Build website
+        run: npm run build
+        working-directory: ${{ github.workspace }}/01+Starting+Project
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying..."
+        working-directory: ${{ github.workspace }}/01+Starting+Project
