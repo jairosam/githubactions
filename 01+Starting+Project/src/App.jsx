@@ -10,6 +10,7 @@ function App() {
         </div>
         <h1>Im learning & Mastering GitHub Actions</h1>
         <h2>Im figuring out why the action fails when the pull request is completed</h2>
+        <h3>it seems like the code event step was causing the problem</h3>
       </header>
       <MainContent />
     </>
