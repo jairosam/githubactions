@@ -43,5 +43,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy
-        run: echo "Deploying..."
+      - name: get artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: npm-artifact
+      - name: Deploy - output contents
+        run: |
+          ls
+          echo "Deploying..."
+        working-directory: ${{ github.workspace }}/npm-artifact
