@@ -24,6 +24,8 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+      script-file: ${{ steps.getFileName.outputs.script-file }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -32,6 +34,10 @@ jobs:
         working-directory: ${{ github.workspace }}/01+Starting+Project
       - name: Build website
         run: npm run build
+        working-directory: ${{ github.workspace }}/01+Starting+Project
+      - name: publish JS filename
+        id: getFileName
+        run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
         working-directory: ${{ github.workspace }}/01+Starting+Project
       - name: Publish artifact
         uses: actions/upload-artifact@v4
