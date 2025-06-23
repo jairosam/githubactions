@@ -53,6 +53,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: npm-artifact
+      - name: Output contents
+        run: echo ${{ needs.build.outputs.script-file }}
       - name: Deploy - output contents
         run: |
           ls
