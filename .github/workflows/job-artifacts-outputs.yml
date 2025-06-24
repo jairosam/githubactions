@@ -1,10 +1,10 @@
 name: Job artifacts and outputs
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - .github/workflows/*  
+#  push:
+#    branches:
+#      - main
+#    paths-ignore:
+#      - .github/workflows/*  
   workflow_dispatch:
 jobs:
   test:
